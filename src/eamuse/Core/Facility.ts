@@ -12,7 +12,7 @@ facility.add('facility.get', async (info, data, send) => {
     location: {
       id: kitem('str', 'ea'),
       country: kitem('str', 'JP'),
-      region: kitem('str', '1'),
+      region: kitem('str', 'JP-13'),
       name: kitem('str', 'CORE'),
       type: kitem('u8', 0),
       countryname: kitem('str', 'UNKNOWN'),
