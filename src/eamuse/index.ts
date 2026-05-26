@@ -94,7 +94,11 @@ export const services = (port: number, plugins: EamusePlugin[]) => {
 
     const host = (info as any).host;
     const protocol = (info as any).protocol || 'http';
-    const url = `${protocol}://${host}`;
+    const url = (info as any).proxy
+      ? `${protocol}://${host}`
+      : port == 80
+      ? `http://${host}`
+      : `http://${host}:${port}`;
 
     for (const moduleName of coreModules) {
       services.item.push({ '@attr': { name: moduleName, url } });
